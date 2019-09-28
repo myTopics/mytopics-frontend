@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import {Card, StyledBody} from 'baseui/card';
 
-
-
 const App: React.FC = () => {
   return (
     <div className="App">

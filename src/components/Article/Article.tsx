@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Card } from 'baseui/card';
+import { Button } from "baseui/button";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import { ArticleInterface } from '../../interfaces/article.interface';
 import './Article.css';
+import { StateContext } from '../../context/StateContext';
 
 
 const Article: React.FC<ArticleInterface> = (props) => {
 
     const [fullScreen, setFullScreen] = useState(false);
+    const context = useContext(StateContext);
     const toggleFullScreen = () => setFullScreen(prevState => !prevState);
+
+    const saveToReadingsList = () => {
+      context.dispatch && context.dispatch({ type: 'add_to_further_readings', payload: props.symbol });
+    }
 
     return (
         <Flipper flipKey={fullScreen} staggerConfig={{
@@ -39,6 +46,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                             </Flipped>
                             <div className={fullScreen ? '' : 'flex1'}>
                                 <img src={props.thumbnail} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
+                                <Button onClick={saveToReadingsList}>save</Button>;
                             </div>
                         </div>
                         <Flipped flipId={'detailText'} delayUntil={'article'}>

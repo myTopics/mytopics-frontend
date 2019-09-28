@@ -8,7 +8,8 @@ const topicsMock: ArticleInterface[] = [
     {
         title: 'Title Mock Foo',
         summary: 'Proin ut dui sed metus pharetra hend rerit vel non mi. Nulla ornare faucibus ex, non facilisis nisl.',
-        thumbnail: 'https://source.unsplash.com/user/erondu/300x300'
+        thumbnail: 'https://source.unsplash.com/user/erondu/300x300',
+        symbol: Symbol(),
     },
     {
         title: 'Erlkönig',
@@ -52,7 +53,8 @@ const topicsMock: ArticleInterface[] = [
             'Dem Vater grauset’s; er reitet geschwind,\n' +
             'Er hält in Armen das ächzende Kind,\n' +
             'Erreicht den Hof mit Mühe und Not;\n' +
-            'In seinen Armen das Kind war tot.'
+            'In seinen Armen das Kind war tot.',
+            symbol: Symbol()
     },
 ];
 
@@ -69,7 +71,7 @@ const ArticlesOverview: React.FC = () => {
 
     return (
         <div className="articles-wrapper">
-            {[...context.state.articles.values()].map((article: ArticleInterface, index: number) => (<Article key={index} title={article.title} summary={article.summary} thumbnail={article.thumbnail} details={article.details} />))}
+            {[...context.state.articles.values()].map((article: ArticleInterface, index: number) => (<Article key={index} {...article} />))}
         </div>
     );
 };

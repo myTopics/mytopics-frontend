@@ -45,10 +45,10 @@ const Article: React.FC<ArticleInterface> = (props) => {
                             <Flipped flipId={'metaData'}>
                                 <div className={fullScreen ? 'meta-data-big' : 'meta-data'}>
                                     <div>
-                                        Johan Wolfgang von Goethe
+                                        {props.author}
                                     </div>
                                     <div>
-                                        01.09.1818
+                                        {props.date}
                                     </div>
                                 </div>
                             </Flipped>

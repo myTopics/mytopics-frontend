@@ -54,7 +54,9 @@ const topicsMock: ArticleInterface[] = [
             'Er hält in Armen das ächzende Kind,\n' +
             'Erreicht den Hof mit Mühe und Not;\n' +
             'In seinen Armen das Kind war tot.',
-            symbol: Symbol()
+            symbol: Symbol(),
+            author: 'Johan Wolfgang von Goethe',
+            date: '01.09.1994'
     },
 ];
 

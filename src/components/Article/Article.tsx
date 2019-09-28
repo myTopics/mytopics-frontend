@@ -5,6 +5,7 @@ import { Flipper, Flipped } from "react-flip-toolkit";
 import { ArticleInterface } from '../../interfaces/article.interface';
 import './Article.css';
 import { StateContext } from '../../context/StateContext';
+import { Plus } from 'baseui/icon';
 
 
 const Article: React.FC<ArticleInterface> = (props) => {
@@ -46,7 +47,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                             </Flipped>
                             <div className={fullScreen ? '' : 'flex1'}>
                                 <img src={props.thumbnail} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
-                                <Button onClick={saveToReadingsList}>save</Button>;
+                                <Button onClick={saveToReadingsList}><Plus></Plus></Button>
                             </div>
                         </div>
                         <Flipped flipId={'detailText'} delayUntil={'article'}>

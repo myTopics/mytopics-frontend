@@ -48,7 +48,11 @@ const Article: React.FC<ArticleInterface> = (props) => {
                                         {props.author}
                                     </div>
                                     <div>
-                                        {props.date.toLocaleString()}
+                                        {props.date.toLocaleString('de-ch', {
+                                            year: "numeric",
+                                            month: "2-digit",
+                                            day: "numeric"
+                                        })}
                                     </div>
                                 </div>
                             </Flipped>

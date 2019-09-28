@@ -42,20 +42,18 @@ const Article: React.FC<ArticleInterface> = (props) => {
                                     {props.summary}
                                 </span>
                             </div>
-                            <Flipped flipId={'metaData'}>
-                                <div className={fullScreen ? 'meta-data-big' : 'meta-data'}>
-                                    <div>
-                                        {props.author}
-                                    </div>
-                                    <div>
-                                        {props.date.toLocaleString('de-ch', {
-                                            year: "numeric",
-                                            month: "2-digit",
-                                            day: "numeric"
-                                        })}
-                                    </div>
+                            <div className={fullScreen ? 'meta-data-big' : 'meta-data'}>
+                                <div>
+                                    {props.author}
                                 </div>
-                            </Flipped>
+                                <div>
+                                    {props.date.toLocaleString('de-ch', {
+                                        year: "numeric",
+                                        month: "2-digit",
+                                        day: "numeric"
+                                    })}
+                                </div>
+                            </div>
                             <div className={fullScreen ? '' : 'flex1'}>
                                 <img src={props.image} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
                                 <Button onClick={saveToReadingsList}><Plus /></Button>

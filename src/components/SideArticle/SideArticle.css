@@ -59,6 +59,10 @@ img {
     height: auto;
 }
 
+.card-title-sider {
+    font-size: 12px;
+}
+
 .card-summary-sider {
     display: none;
 }

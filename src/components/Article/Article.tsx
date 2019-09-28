@@ -53,7 +53,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                                 </div>
                             </Flipped>
                             <div className={fullScreen ? '' : 'flex1'}>
-                                <img src={props.thumbnail} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
+                                <img src={props.image} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
                                 <Button onClick={saveToReadingsList}><Plus /></Button>
                             </div>
                         </div>

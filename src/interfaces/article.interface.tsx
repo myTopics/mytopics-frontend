@@ -1,7 +1,7 @@
 export interface ArticleInterface {
   title: string,
   summary: string,
-  thumbnail: string,
+  image: string,
   author?: string,
   date?: string,
   symbol: Symbol,

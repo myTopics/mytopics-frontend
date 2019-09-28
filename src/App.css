@@ -12,7 +12,7 @@
   }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 599px) {
   .App {
     text-align: center;
     display: grid;

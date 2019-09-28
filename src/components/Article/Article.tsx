@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import { Card } from 'baseui/card';
+import { Flipper, Flipped } from "react-flip-toolkit";
 import { ArticleInterface } from '../../interfaces/article.interface';
 import './Article.css';
-import {Card} from "baseui/card";
-import {Flipper, Flipped} from "react-flip-toolkit";
+
 
 const Article: React.FC<ArticleInterface> = (props) => {
 

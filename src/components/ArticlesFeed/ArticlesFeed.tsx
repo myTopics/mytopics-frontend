@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './ArticlesFeed.css';
 import { ArticleInterface } from '../../interfaces/article.interface';
 import Article from '../Article/Article';
+import { StateContext } from '../../context/StateContext';
 
 const topicsMock: ArticleInterface[] = [
     {
@@ -20,10 +21,16 @@ const topicsMock: ArticleInterface[] = [
 const ArticlesOverview: React.FC = () => {
 
     const [topics, setTopics] = useState<ArticleInterface[]>([]);
+    const context = useContext(StateContext);
 
     useEffect(() => {
         setTopics(topicsMock);
+        context.dispatch && context.dispatch({ type: 'add_to_further_readings', payload: 'uid_001' });
     }, []);
+
+    useEffect(() => {
+        console.log('new state', context.state);
+    }, [ context.state ]);
 
     return (
         <div className="articles-wrapper">

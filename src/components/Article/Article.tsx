@@ -18,17 +18,27 @@ const Article: React.FC<ArticleInterface> = (props) => {
             <Flipped flipId={'article'}>
                 <div className={fullScreen ? 'article-full-screen' : 'article-normal'} onClick={toggleFullScreen}>
                     <Card>
-                        <div className={'container'}>
-                            <div className={'flex-2'}>
-                                <h1 className={'card-title'}>
+                        <div className={fullScreen ? '' : 'container'}>
+                            <div className={fullScreen ? '': 'flex-2'}>
+                                <h1 className={fullScreen ? 'card-title-big' : 'card-title'}>
                                     {props.title}
                                 </h1>
-                                <span className={'card-summary'}>
+                                <span className={fullScreen ? 'card-summary-big' : 'card-summary'}>
                                     {props.summary}
                                 </span>
                             </div>
-                            <div className={'flex1'}>
-                                <img src={props.thumbnail} alt={props.title}/>
+                            <Flipped flipId={'metaData'}>
+                                <div className={fullScreen ? 'metaDataBig' : 'metaData'}>
+                                    <div>
+                                        Johan Wolfgang von Goethe
+                                    </div>
+                                    <div>
+                                        01.09.1818
+                                    </div>
+                                </div>
+                            </Flipped>
+                            <div className={fullScreen ? '' : 'flex1'}>
+                                <img src={props.thumbnail} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
                             </div>
                         </div>
                         <Flipped flipId={'detailText'} delayUntil={'article'}>

@@ -17,14 +17,41 @@
     font-family: "Lucida Grande", Helvetica;
 }
 
+.card-title-big {
+    font-size: 36px;
+    font-family: "Lucida Grande", Helvetica;
+    color: #444444;
+    margin: 50px;
+    margin-bottom: 100px;
+}
+
 .card-summary {
     font-size: 14px;
     font-family: "Lucida Grande", Helvetica;
 }
 
+.card-summary-big {
+    font-size: 28px;
+    font-family: "Lucida Grande", Helvetica;
+    font-style: italic;
+    margin: 50px;
+    color: #aaaaaa;
+}
+
 img {
     max-width:100%;
     max-height:100%;
+}
+
+.thumbnail {
+    height: 90px;
+    width: 90px;
+}
+
+.thumbnail-big {
+    height: 500px;
+    width: 500px;
+    margin: 50px;
 }
 
 .article-normal {
@@ -34,6 +61,7 @@ img {
 
 .article-full-screen {
     position: fixed;
+    overflow: scroll;
     top: 0;
     left: 0;
     width: 100%;
@@ -45,5 +73,17 @@ img {
 }
 
 .show-detail-text {
+    white-space: pre;
     display: block;
+    max-width: 680px;
+    margin: auto;
+}
+
+.metaData {
+    display: none;
+}
+
+.metaDataBig {
+    display: block;
+    margin: 50px;
 }

@@ -6,6 +6,7 @@ import { StateContext } from './context/StateContext';
 
 const App: React.FC = () => {
   const [ state, dispatch ] = useReducer(StateReducer, {
+    articles: new Map(),
     furtherReadings: []
   });
   return (

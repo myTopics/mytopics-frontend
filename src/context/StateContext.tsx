@@ -7,6 +7,7 @@ interface StateContextInterface {
 
 export const StateContext: React.Context<StateContextInterface> = React.createContext({
   state: {
+    articles: new Map(),
     furtherReadings: []
   }
 });

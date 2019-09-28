@@ -25,7 +25,7 @@ const ArticlesOverview: React.FC = () => {
 
     useEffect(() => {
         setTopics(topicsMock);
-        context.dispatch && context.dispatch({ type: 'add_to_further_readings', payload: 'uid_001' });
+        context.dispatch && context.dispatch({ type: 'add_to_articles_batch', payload: topicsMock });
     }, []);
 
     useEffect(() => {

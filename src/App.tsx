@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Card, StyledBody} from 'baseui/card';
+
+
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card
+          overrides={{Root: {style: {width: '328px'}}}}
+          headerImage={'https://source.unsplash.com/user/erondu/700x400'}
+          title="Example card"
+      >
+        <StyledBody>
+          Proin ut dui sed metus pharetra hend rerit vel non mi. Nulla
+          ornare faucibus ex, non facilisis nisl.
+        </StyledBody>
+      </Card>
     </div>
   );
-}
+};
 
 export default App;

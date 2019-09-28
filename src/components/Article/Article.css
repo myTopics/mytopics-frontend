@@ -92,6 +92,7 @@ img {
     display: block;
     max-width: 680px;
     margin: auto;
+    white-space: initial !important;
 }
 
 .meta-data {

@@ -10,9 +10,12 @@ const Article: React.FC<ArticleInterface> = (props) => {
     const toggleFullScreen = () => setFullScreen(prevState => !prevState);
 
     return (
-        <Flipper flipKey={fullScreen}>
+        <Flipper flipKey={fullScreen} staggerConfig={{
+            default: {
+                speed: .99 // default is .1, 0 < n < 1
+            }}}>
             <Flipped flipId={'article'}>
-                <div className={fullScreen ? 'full-screen' : 'normal'} onClick={toggleFullScreen}>
+                <div className={fullScreen ? 'article-full-screen' : 'article-normal'} onClick={toggleFullScreen}>
                     <Card>
                         <div className={'container'}>
                             <div className={'flex-2'}>
@@ -27,6 +30,11 @@ const Article: React.FC<ArticleInterface> = (props) => {
                                 <img src={props.thumbnail} alt={props.title}/>
                             </div>
                         </div>
+                        <Flipped flipId={'detailText'} delayUntil={'article'}>
+                            <div className={fullScreen ? 'show-detail-text' : 'display-none'}>
+                                {props.details}
+                            </div>
+                        </Flipped>
                     </Card>
                 </div>
             </Flipped>

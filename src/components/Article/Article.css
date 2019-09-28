@@ -27,15 +27,23 @@ img {
     max-height:100%;
 }
 
-.normal {
+.article-normal {
     width: auto;
     height: auto;
 }
 
-.full-screen {
+.article-full-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.show-detail-text {
+    display: block;
 }

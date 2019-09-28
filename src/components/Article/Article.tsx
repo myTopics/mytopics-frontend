@@ -5,19 +5,24 @@ import { Flipper, Flipped } from "react-flip-toolkit";
 import { ArticleInterface } from '../../interfaces/article.interface';
 import './Article.css';
 import { StateContext } from '../../context/StateContext';
-import { Plus } from 'baseui/icon';
+import { Plus, Delete } from 'baseui/icon';
 
 
 const Article: React.FC<ArticleInterface> = (props) => {
 
     const [fullScreen, setFullScreen] = useState(false);
     const context = useContext(StateContext);
-    const toggleFullScreen = () => setFullScreen(prevState => !prevState);
+    const openFullScreen = () => {
+        if(!fullScreen) {
+            setFullScreen(true);
+        }
+    };
+    const closeFullScreen = () => setFullScreen(false);
 
     const saveToReadingsList = (e: any) => {
         e.stopPropagation();
         context.dispatch && context.dispatch({ type: 'add_to_further_readings', payload: props.symbol });
-    }
+    };
 
     return (
         <Flipper flipKey={fullScreen} staggerConfig={{
@@ -25,19 +30,20 @@ const Article: React.FC<ArticleInterface> = (props) => {
                 speed: .99 // default is .1, 0 < n < 1
             }}}>
             <Flipped flipId={'article'}>
-                <div className={fullScreen ? 'article-full-screen' : 'article-normal'} onClick={toggleFullScreen}>
+                <div className={fullScreen ? 'article-full-screen' : 'article-normal'} onClick={openFullScreen}>
                     <Card>
                         <div className={fullScreen ? '' : 'container'}>
                             <div className={fullScreen ? '': 'flex-2'}>
                                 <h1 className={fullScreen ? 'card-title-big' : 'card-title'}>
                                     {props.title}
                                 </h1>
+                                <div onClick={closeFullScreen} className={fullScreen ? 'close-button' : 'display-none'}  ><Delete size={50}/></div>
                                 <span className={fullScreen ? 'card-summary-big' : 'card-summary'}>
                                     {props.summary}
                                 </span>
                             </div>
                             <Flipped flipId={'metaData'}>
-                                <div className={fullScreen ? 'metaDataBig' : 'metaData'}>
+                                <div className={fullScreen ? 'meta-data-big' : 'meta-data'}>
                                     <div>
                                         Johan Wolfgang von Goethe
                                     </div>

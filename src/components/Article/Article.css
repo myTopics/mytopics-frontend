@@ -79,11 +79,17 @@ img {
     margin: auto;
 }
 
-.metaData {
+.meta-data {
     display: none;
 }
 
-.metaDataBig {
+.meta-data-big {
     display: block;
     margin: 50px;
+}
+
+.close-button {
+    position: fixed;
+    top: 0;
+    right: 0;
 }

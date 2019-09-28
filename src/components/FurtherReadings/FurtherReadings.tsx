@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from 'react';
 import './FurtherReadings.css';
 import { StateContext } from '../../context/StateContext';
 import { ArticleInterface } from '../../interfaces/article.interface';
+import SideArticle from '../SideArticle/SideArticle';
 
 
 const FurtherReadings: React.FC<any> = (props) => {
@@ -20,7 +21,7 @@ const FurtherReadings: React.FC<any> = (props) => {
 
     return (
         <div>
-            {articles.map((article) => (<div>{article.title}</div>))}
+            {articles.map((article) => (<SideArticle {...article}></SideArticle>))}
         </div>
     );
 };

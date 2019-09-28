@@ -16,7 +16,7 @@ const topicsMock: ArticleInterface[] = [
     },
 ];
 
-const TopicsOverview: React.FC = () => {
+const ArticlesOverview: React.FC = () => {
 
     const [topics, setTopics] = useState<ArticleInterface[]>([]);
 
@@ -25,10 +25,10 @@ const TopicsOverview: React.FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className="articles-wrapper">
             {topics.map((article, index) => (<Article key={index} title={article.title} summary={article.summary} thumbnail={article.thumbnail} />))}
         </div>
-    )
+    );
 };
 
-export default TopicsOverview;
+export default ArticlesOverview;

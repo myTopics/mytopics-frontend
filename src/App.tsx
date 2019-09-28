@@ -6,6 +6,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <ArticlesFeed />
+      <div>Sider</div>
     </div>
   );
 };

@@ -25,9 +25,9 @@ const TopicsOverview: React.FC = () => {
     }, []);
 
     return (
-        <>
+        <div>
             {topics.map((article, index) => (<Article key={index} title={article.title} summary={article.summary} thumbnail={article.thumbnail} />))}
-        </>
+        </div>
     )
 };
 

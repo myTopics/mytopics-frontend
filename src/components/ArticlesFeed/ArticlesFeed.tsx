@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import './ArticlesFeed.css';
 import { ArticleInterface } from '../../interfaces/article.interface';
 import Article from '../Article/Article';
@@ -57,12 +57,9 @@ const topicsMock: ArticleInterface[] = [
 ];
 
 const ArticlesOverview: React.FC = () => {
-
-    const [topics, setTopics] = useState<ArticleInterface[]>([]);
     const context = useContext(StateContext);
 
     useEffect(() => {
-        setTopics(topicsMock);
         context.dispatch && context.dispatch({ type: 'add_to_articles_batch', payload: topicsMock });
     }, []);
 
@@ -72,7 +69,7 @@ const ArticlesOverview: React.FC = () => {
 
     return (
         <div className="articles-wrapper">
-            {topics.map((article, index) => (<Article key={index} title={article.title} summary={article.summary} thumbnail={article.thumbnail} details={article.details} />))}
+            {[...context.state.articles.values()].map((article: ArticleInterface, index: number) => (<Article key={index} title={article.title} summary={article.summary} thumbnail={article.thumbnail} details={article.details} />))}
         </div>
     );
 };

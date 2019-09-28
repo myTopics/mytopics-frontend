@@ -9,6 +9,9 @@ const ArticlesOverview: React.FC = () => {
 
     useEffect(() => {
         fetch('http://localhost:3003/articles').then(res => res.json()).then((articles) => {
+            articles = articles.map((article: any) => {
+                return { ...article, date: new Date(article.date) };
+            }); 
             context.dispatch && context.dispatch({ type: 'add_to_articles_batch', payload: articles });
         });
     }, []);

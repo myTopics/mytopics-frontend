@@ -48,7 +48,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                                         {props.author}
                                     </div>
                                     <div>
-                                        {props.date}
+                                        {props.date.toLocaleString()}
                                     </div>
                                 </div>
                             </Flipped>
@@ -59,7 +59,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                         </div>
                         <Flipped flipId={'detailText'} delayUntil={'article'}>
                             <div className={fullScreen ? 'show-detail-text' : 'display-none'}>
-                                {props.details}
+                                {props.text}
                             </div>
                         </Flipped>
                     </Card>

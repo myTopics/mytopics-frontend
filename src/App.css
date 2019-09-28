@@ -9,7 +9,6 @@ body {
 
 @media(max-width: 1199px) {
   .App {
-    text-align: center;
     display: grid;
     grid-template-columns: 1fr 250px;
   }
@@ -17,7 +16,6 @@ body {
 
 @media(max-width: 599px) {
   .App {
-    text-align: center;
     display: grid;
     grid-template-columns: 1fr 150px;
   }

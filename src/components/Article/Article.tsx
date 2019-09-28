@@ -38,9 +38,9 @@ const Article: React.FC<ArticleInterface> = (props) => {
                                     {props.title}
                                 </h1>
                                 <div onClick={closeFullScreen} className={fullScreen ? 'close-button' : 'display-none'}  ><Delete size={50}/></div>
-                                <span className={fullScreen ? 'card-summary-big' : 'card-summary'}>
+                                <div className={fullScreen ? 'card-summary-big' : 'card-summary'}>
                                     {props.summary}
-                                </span>
+                                </div>
                             </div>
                             <div className={fullScreen ? 'meta-data-big' : 'meta-data'}>
                                 <div>

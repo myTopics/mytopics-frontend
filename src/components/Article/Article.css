@@ -26,7 +26,7 @@ h1 {
     font-family: "Lucida Grande", Helvetica;
     color: #444444;
     margin: 50px;
-    margin-bottom: 100px;
+    text-align: center;
 }
 
 .card-summary {
@@ -38,8 +38,10 @@ h1 {
     font-size: 28px;
     font-family: "Lucida Grande", Helvetica;
     font-style: italic;
-    margin: 50px;
+    margin: 25px 50px;
     color: #aaaaaa;
+    line-height: 1;
+    text-align: center;
 }
 
 img {
@@ -100,8 +102,7 @@ img {
 }
 
 .meta-data-big {
-    display: block;
-    margin: 50px;
+    text-align: center;
 }
 
 .close-button {

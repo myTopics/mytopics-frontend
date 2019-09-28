@@ -25,7 +25,7 @@ const SideArticle: React.FC<any> = (props) => {
             }}}>
             <Flipped flipId={'side-article'}>
                 <div className={fullScreen ? 'side-article-full-screen' : 'side-article-normal side-article'} onClick={toggleFullScreen}>
-                <Card>
+                <Card headerImage={props.image}>
                         <div className={fullScreen ? '' : 'side-container-sider'}>
                             <div className={fullScreen ? '': ''}>
                                 <h1 className={fullScreen ? 'side-card-title-big' : 'side-card-title'}>
@@ -34,9 +34,6 @@ const SideArticle: React.FC<any> = (props) => {
                                 <span className={fullScreen ? 'side-card-summary-big' : 'side-card-summary'}>
                                     {props.summary}
                                 </span>
-                            </div>
-                            <div className={fullScreen ? '' : ''}>
-                                <img src={props.image} alt={props.title} className={fullScreen ? 'side-thumbnail-big' : 'side-thumbnail'}/>
                             </div>
                         </div>
                         <Flipped flipId={'side-detailText'} delayUntil={'side-article'}>

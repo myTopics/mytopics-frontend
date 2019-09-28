@@ -4,19 +4,5 @@ body {
 
 .App {
   display: grid;
-  grid-template-columns: 1fr 400px;
-}
-
-@media(max-width: 1199px) {
-  .App {
-    display: grid;
-    grid-template-columns: 1fr 250px;
-  }
-}
-
-@media(max-width: 599px) {
-  .App {
-    display: grid;
-    grid-template-columns: 1fr 150px;
-  }
+  grid-template-columns: 1fr 250px;
 }

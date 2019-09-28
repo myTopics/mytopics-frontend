@@ -20,7 +20,7 @@ const FurtherReadings: React.FC<any> = (props) => {
     }, [articleSymbols]);
 
     return (
-        <div>
+        <div className={'sidebar-container'}>
             {articles.map((article) => (<SideArticle {...article}></SideArticle>))}
         </div>
     );

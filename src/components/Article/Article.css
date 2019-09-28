@@ -9,7 +9,14 @@ h1 {
 }
 
 .flex-1 {
-    flex-grow: 1;
+    flex-grow: 0;
+    width: 90px;
+    flex-shrink: 0;
+
+}
+
+.flex-1 button {
+    width: 90px;
 }
 
 .flex-2 {
@@ -70,8 +77,12 @@ img {
     overflow: scroll;
     top: 0;
     left: 0;
-    max-width: 66%;
+    width: calc(100% - 250px);
     height: 100%;
+}
+
+.article-full-screen > div {
+    min-height: 100%;
 }
 
 @media(max-width: 1199px) {

@@ -2,6 +2,10 @@ h1 {
     line-height: 1;
 }
 
+.side-article {
+    margin: 25px;
+}
+
 .side-container {
     display: flex;
     flex-direction: row;
@@ -69,20 +73,12 @@ img {
     overflow: scroll;
     top: 0;
     left: 0;
-    max-width: 66%;
+    width: calc(100% - 250px);
     height: 100%;
 }
 
-@media(max-width: 1199px) {
-    .side-article-full-screen {
-        max-width: 75%;
-    }
-}
-
-@media(max-width: 599px) {
-    .side-article-full-screen {
-        max-width: 55%;
-    }
+.side-article-full-screen > div {
+    min-height: 100%;
 }
 
 .side-display-none {
@@ -108,4 +104,11 @@ img {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+
+@media(max-width: 599px) {
+    .side-article-full-screen {
+        max-width: 55%;
+    }
 }

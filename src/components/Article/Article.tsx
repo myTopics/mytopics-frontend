@@ -14,8 +14,9 @@ const Article: React.FC<ArticleInterface> = (props) => {
     const context = useContext(StateContext);
     const toggleFullScreen = () => setFullScreen(prevState => !prevState);
 
-    const saveToReadingsList = () => {
-      context.dispatch && context.dispatch({ type: 'add_to_further_readings', payload: props.symbol });
+    const saveToReadingsList = (e: any) => {
+        e.stopPropagation();
+        context.dispatch && context.dispatch({ type: 'add_to_further_readings', payload: props.symbol });
     }
 
     return (
@@ -47,7 +48,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                             </Flipped>
                             <div className={fullScreen ? '' : 'flex1'}>
                                 <img src={props.thumbnail} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
-                                <Button onClick={saveToReadingsList}><Plus></Plus></Button>
+                                <Button onClick={saveToReadingsList}><Plus /></Button>
                             </div>
                         </div>
                         <Flipped flipId={'detailText'} delayUntil={'article'}>

@@ -6,16 +6,16 @@ import './Article.css';
 const Article: React.FC<ArticleInterface> = (props) => {
   return (
       <Card>
-          <div className="container">
-              <div className="flex-2">
-                  <h1>
+          <div className={'container'}>
+              <div className={'flex-2'}>
+                  <h1 className={'card-title'}>
                       {props.title}
                   </h1>
-                <span>
+                <span className={'card-summary'}>
                     {props.summary}
                 </span>
               </div>
-              <div className="flex1">
+              <div className={'flex1'}>
                   <img src={props.thumbnail}/>
               </div>
           </div>

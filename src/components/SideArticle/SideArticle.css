@@ -68,6 +68,11 @@ img {
     height: auto;
 }
 
+.side-container-fullscreen {
+    max-width: 800px;
+    margin: auto;
+}
+
 .side-article-full-screen {
     position: fixed;
     overflow: scroll;

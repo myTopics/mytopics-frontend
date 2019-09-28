@@ -13,6 +13,10 @@ h1 {
     margin: auto;
 }
 
+.article-full-screen img {
+    text-align: center;
+}
+
 .flex-1 {
     flex-grow: 0;
     width: 90px;

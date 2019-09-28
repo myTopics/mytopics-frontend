@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import './ArticlesFeed.css';
 import { ArticleInterface } from '../../interfaces/article.interface';
 import Article from '../Article/Article';
+import TopicsSelection from '../TopicSelection/TopicSelection';
 import { StateContext } from '../../context/StateContext';
 
 const ArticlesOverview: React.FC = () => {
@@ -22,6 +23,7 @@ const ArticlesOverview: React.FC = () => {
 
     return (
         <div className="articles-wrapper">
+            <TopicsSelection />
             {[...context.state.articles.values()].map((article: ArticleInterface, index: number) => (<Article key={index} {...article} />))}
         </div>
     );

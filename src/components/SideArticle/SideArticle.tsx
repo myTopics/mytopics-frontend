@@ -23,34 +23,24 @@ const SideArticle: React.FC<any> = (props) => {
             default: {
                 speed: .99 // default is .1, 0 < n < 1
             }}}>
-            <Flipped flipId={'article'}>
-                <div className={fullScreen ? 'article-full-screen' : 'article-normal side-article'} onClick={toggleFullScreen}>
+            <Flipped flipId={'side-article'}>
+                <div className={fullScreen ? 'side-article-full-screen' : 'side-article-normal side-article'} onClick={toggleFullScreen}>
                 <Card>
-                        <div className={fullScreen ? '' : 'container-sider'}>
+                        <div className={fullScreen ? '' : 'side-container-sider'}>
                             <div className={fullScreen ? '': ''}>
-                                <h1 className={fullScreen ? 'card-title-big' : 'card-title-sider'}>
+                                <h1 className={fullScreen ? 'side-card-title-big' : 'side-card-title'}>
                                     {props.title}
                                 </h1>
-                                <span className={fullScreen ? 'card-summary-big' : 'card-summary-sider'}>
+                                <span className={fullScreen ? 'side-card-summary-big' : 'side-card-summary'}>
                                     {props.summary}
                                 </span>
                             </div>
-                            <Flipped flipId={'metaData'}>
-                                <div className={fullScreen ? 'metaDataBig' : 'metaData'}>
-                                    <div>
-                                        Johan Wolfgang von Goethe
-                                    </div>
-                                    <div>
-                                        01.09.1818
-                                    </div>
-                                </div>
-                            </Flipped>
                             <div className={fullScreen ? '' : ''}>
-                                <img src={props.image} alt={props.title} className={fullScreen ? 'thumbnail-big' : 'thumbnail'}/>
+                                <img src={props.image} alt={props.title} className={fullScreen ? 'side-thumbnail-big' : 'side-thumbnail'}/>
                             </div>
                         </div>
-                        <Flipped flipId={'detailText'} delayUntil={'article'}>
-                            <div className={fullScreen ? 'show-detail-text' : 'display-none'}>
+                        <Flipped flipId={'side-detailText'} delayUntil={'side-article'}>
+                            <div className={fullScreen ? 'side-show-detail-text' : 'side-display-none'}>
                                 {props.details}
                             </div>
                         </Flipped>

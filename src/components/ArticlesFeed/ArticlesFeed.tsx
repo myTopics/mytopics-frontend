@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Card, StyledBody, StyledThumbnail} from 'baseui/card';
-import './TopicsOverview.css';
+import './ArticlesFeed.css';
 import { ArticleInterface } from '../../interfaces/article.interface';
 import Article from '../Article/Article';
 
@@ -27,7 +26,7 @@ const TopicsOverview: React.FC = () => {
 
     return (
         <>
-            {topics.map((article) => (<Article title={article.title} summary={article.summary} thumbnail={article.thumbnail} />))}
+            {topics.map((article, index) => (<Article key={index} title={article.title} summary={article.summary} thumbnail={article.thumbnail} />))}
         </>
     )
 };

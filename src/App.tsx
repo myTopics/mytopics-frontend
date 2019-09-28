@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import TopicsOverview from './components/TopicsOverview/TopicsOverview';
+import ArticlesFeed from './components/ArticlesFeed/ArticlesFeed';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <TopicsOverview />
+      <ArticlesFeed />
     </div>
   );
 };

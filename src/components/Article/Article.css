@@ -8,6 +8,11 @@ h1 {
     justify-content: center;
 }
 
+.container-fullscreen {
+    max-width: 800px;
+    margin: auto;
+}
+
 .flex-1 {
     flex-grow: 0;
     width: 90px;
@@ -83,6 +88,14 @@ img {
 
 .article-full-screen > div {
     min-height: 100%;
+}
+
+.flex-1-fullscreen {
+    display: none;
+}
+
+.article-normal > div > img:first-child {
+    display: none;
 }
 
 @media(max-width: 1199px) {

@@ -1,3 +1,7 @@
+h1 {
+    line-height: 1;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -64,8 +68,20 @@ img {
     overflow: scroll;
     top: 0;
     left: 0;
-    width: 100%;
+    max-width: 66%;
     height: 100%;
+}
+
+@media(max-width: 1199px) {
+    .article-full-screen {
+        max-width: 75%;
+    }
+}
+
+@media(max-width: 599px) {
+    .article-full-screen {
+       max-width: 55%;
+    }
 }
 
 .display-none {
@@ -73,7 +89,6 @@ img {
 }
 
 .show-detail-text {
-    white-space: pre;
     display: block;
     max-width: 680px;
     margin: auto;

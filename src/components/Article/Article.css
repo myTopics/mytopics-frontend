@@ -6,11 +6,11 @@
 }
 
 .flex-1 {
-    flex: 1;
+    flex-grow: 1;
 }
 
 .flex-2 {
-    flex: 2;
+    flex-grow: 2;
 }
 
 .card-title {

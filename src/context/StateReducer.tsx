@@ -27,10 +27,10 @@ export const StateReducer: React.Reducer<any, any> = (state, action) => {
       const _articles = new Map(state.articles);
       const _article = {..._articles.get(action.payload), setFullscreen: action.handle};
       _articles.set(action.payload, _article)
-      console.log('set fullscreen handler', _article);
+      console.log('set fullscreen handler', _article, _articles);
       return { ...state, _articles}
     case 'set_article_active':
-      console.log('set active', action.payload, state.articles.get(action.payload));
+      // console.log('set active', action.payload, state.articles.get(action.payload));
       // state.articles.get(action.payload).setFullscreen(true);
       return state
     case 'push_to_history':

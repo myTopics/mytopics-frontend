@@ -14,6 +14,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
     const context = useContext(StateContext);
     const openFullScreen = () => {
         if(!fullScreen) {
+            context.dispatch && context.dispatch({ type: 'push_to_history', payload: props.symbol});
             setFullScreen(true);
         }
     };

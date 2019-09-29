@@ -3,6 +3,7 @@ import {Drawer} from 'baseui/drawer';
 import { StateContext } from '../../context/StateContext';
 import { useContext } from 'react';
 import HistoryFilter from '../HistoryFilter/HistoryFilter';
+import ArticleHistory from '../ArticleHistory/ArticleHistory';
 
 export default () => {
   const context = useContext(StateContext)
@@ -14,9 +15,7 @@ export default () => {
       onClose={() => close()}
       isOpen={context.state.historyOpen}
     >
-      Proin ut dui sed metus pharetra hend rerit vel non mi.
-      Nulla ornare faucibus ex, non facilisis nisl. Maecenas
-      aliquet mauris ut tempus.
+      <ArticleHistory />
       <HistoryFilter></HistoryFilter>
     </Drawer>
   );

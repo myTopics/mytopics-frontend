@@ -10,5 +10,7 @@ export const StateContext: React.Context<StateContextInterface> = React.createCo
     articles: new Map(),
     furtherReadings: [],
     historyOpen: false,
+    history: [],
+    showFetchLoader: false,
   }
 });

@@ -5,7 +5,7 @@
     right: 0;
     top: 0;
     bottom: 50px;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .history-btn {

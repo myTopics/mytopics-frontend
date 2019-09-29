@@ -11,6 +11,10 @@ export const StateReducer: React.Reducer<any, any> = (state, action) => {
       return { ...state, furtherReadings: [...state.furtherReadings, action.payload]}
     case 'remove_from_further_readings':
       return { ...state, furtherReadings: [...state.furtherReadings.map((element: Symbol) => element !== action.payload)]}
+    case 'open_history':
+      return { ...state, historyOpen: true}
+    case 'close_history':
+      return { ...state, historyOpen: false}
     default:
       throw new Error();
   }

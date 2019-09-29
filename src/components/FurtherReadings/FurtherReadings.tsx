@@ -20,11 +20,15 @@ const FurtherReadings: React.FC<any> = (props) => {
         setArticles(_articles);
     }, [articleSymbols]);
 
+    const openHistory = () => {
+        context.dispatch && context.dispatch({ type: 'open_history' });
+    };
+
     return (
         <div className={'sidebar-container'}>
             {articles.map((article) => (<SideArticle {...article}></SideArticle>))}
             <div className={'history-btn'}>
-                <Button onClick={() => alert("click")}>History</Button>;
+                <Button onClick={() => openHistory()}>History</Button>;
             </div>
         </div>
     );

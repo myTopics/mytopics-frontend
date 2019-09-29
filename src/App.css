@@ -6,3 +6,12 @@ body {
   display: grid;
   grid-template-columns: 1fr 250px;
 }
+
+.infobox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  padding: 25px;
+  font-size: 14px;
+}

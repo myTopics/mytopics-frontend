@@ -18,6 +18,9 @@ const App: React.FC = () => {
         <FurtherReadings />
       </div>
       <HistoryDrawer />
+      <div className="infobox">
+        Powered by NewsAPI.org
+      </div>
     </StateContext.Provider>
   );
 };

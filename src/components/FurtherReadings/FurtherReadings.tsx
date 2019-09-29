@@ -3,6 +3,7 @@ import './FurtherReadings.css';
 import { StateContext } from '../../context/StateContext';
 import { ArticleInterface } from '../../interfaces/article.interface';
 import SideArticle from '../SideArticle/SideArticle';
+import { Button } from 'baseui/button';
 
 
 const FurtherReadings: React.FC<any> = (props) => {
@@ -22,6 +23,9 @@ const FurtherReadings: React.FC<any> = (props) => {
     return (
         <div className={'sidebar-container'}>
             {articles.map((article) => (<SideArticle {...article}></SideArticle>))}
+            <div className={'history-btn'}>
+                <Button onClick={() => alert("click")}>History</Button>;
+            </div>
         </div>
     );
 };

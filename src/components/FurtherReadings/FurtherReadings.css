@@ -1,3 +1,12 @@
 .sidebar-container {
     background-color: #dadada;
 }
+
+.history-btn {
+    position: fixed;
+    bottom: 0;
+}
+
+.history-btn button {
+    width: 250px;
+}

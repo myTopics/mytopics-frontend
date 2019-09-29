@@ -11,7 +11,10 @@ const SideArticle: React.FC<any> = (props) => {
 
     const [fullScreen, setFullScreen] = useState(false);
     const context = useContext(StateContext);
-    const toggleFullScreen = () => setFullScreen(prevState => !prevState);
+    const toggleFullScreen = () => setFullScreen(prevState => {
+        if(!prevState) context.dispatch && context.dispatch({ type: 'push_to_history', payload: props.symbol});
+        return !prevState;
+    });
 
     const saveToReadingsList = (e: any) => {
         e.stopPropagation();

@@ -1,0 +1,9 @@
+.fetch-loader-container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-290px);
+}
+
+.fetch-spinner-container {
+  text-align: center;
+}

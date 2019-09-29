@@ -5,11 +5,16 @@ import { StateReducer } from './context/StateReducer';
 import { StateContext } from './context/StateContext';
 import FurtherReadings from './components/FurtherReadings/FurtherReadings';
 import HistoryDrawer from './components/HistoryDrawer/HistoryDrawer';
+import FetchLoader from './components/FetchLoader/FetchLoader';
 
 const App: React.FC = () => {
   const [ state, dispatch ] = useReducer(StateReducer, {
     articles: new Map(),
-    furtherReadings: []
+    furtherReadings: [],
+    historyOpen: false,
+    history: [],
+    showFetchLoader: false,
+    activeArticle: null,
   });
   return (
     <StateContext.Provider value={{ state, dispatch }}>
@@ -18,6 +23,7 @@ const App: React.FC = () => {
         <FurtherReadings />
       </div>
       <HistoryDrawer />
+      <FetchLoader></FetchLoader>
       <div className="infobox">
         Powered by NewsAPI.org
       </div>

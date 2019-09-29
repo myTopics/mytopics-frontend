@@ -26,7 +26,7 @@ const FurtherReadings: React.FC<any> = (props) => {
 
     return (
         <div className={'sidebar-container'}>
-            {articles.map((article) => (<SideArticle {...article}></SideArticle>))}
+            {articles.map((article, index) => (<SideArticle {...article} key={index}></SideArticle>))}
             <div className={'history-btn'}>
                 <Button onClick={() => openHistory()}>History</Button>;
             </div>

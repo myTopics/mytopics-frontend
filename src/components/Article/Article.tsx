@@ -1,17 +1,23 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { Card } from 'baseui/card';
 import { Button } from "baseui/button";
 import { Flipper, Flipped } from "react-flip-toolkit";
+import { Plus, Delete } from 'baseui/icon';
 import { ArticleInterface } from '../../interfaces/article.interface';
 import './Article.css';
 import { StateContext } from '../../context/StateContext';
-import { Plus, Delete } from 'baseui/icon';
+import Recommendations from '../Recommendations/Recommendations';
 
 
 const Article: React.FC<ArticleInterface> = (props) => {
 
     const [fullScreen, setFullScreen] = useState(false);
     const context = useContext(StateContext);
+
+    useEffect(() => {
+        context.dispatch && context.dispatch({ type: 'set_fullscreen_handle', payload: props.symbol, handle: setFullScreen});
+    }, []);
+
     const openFullScreen = () => {
         if(!fullScreen) {
             context.dispatch && context.dispatch({ type: 'push_to_history', payload: props.symbol});
@@ -63,6 +69,7 @@ const Article: React.FC<ArticleInterface> = (props) => {
                         <Flipped flipId={'detailText'} delayUntil={'article'}>
                             <div className={fullScreen ? 'show-detail-text' : 'display-none'}>
                                 {props.text}
+                                {props.decisions && props.decisions.length > 0 && (<Recommendations decisions={props.decisions} />)}
                             </div>
                         </Flipped>
                     </Card>

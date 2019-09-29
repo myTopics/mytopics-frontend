@@ -12,5 +12,6 @@ export const StateContext: React.Context<StateContextInterface> = React.createCo
     historyOpen: false,
     history: [],
     showFetchLoader: false,
+    activeArticle: null
   }
 });

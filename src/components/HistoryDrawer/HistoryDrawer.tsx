@@ -16,7 +16,6 @@ export default () => {
       isOpen={context.state.historyOpen}
     >
       <ArticleHistory />
-      <HistoryFilter></HistoryFilter>
     </Drawer>
   );
 };

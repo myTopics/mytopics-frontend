@@ -14,6 +14,7 @@ const App: React.FC = () => {
     historyOpen: false,
     history: [],
     showFetchLoader: false,
+    activeArticle: null,
   });
   return (
     <StateContext.Provider value={{ state, dispatch }}>

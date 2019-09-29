@@ -12,7 +12,7 @@ export default () => {
     <div className={'fetch-loader-container'}>
       <Card
         overrides={{Root: {style: {width: '328px'}}}}
-        headerImage={'/penguin-facts-penguin-highway.jpg'}
+        headerImage={'https://home.adelphi.edu/~br21601/follow%20the%20leader.jpg'}
         title="Penguin Fun Facts #3"
       >
         <StyledBody>

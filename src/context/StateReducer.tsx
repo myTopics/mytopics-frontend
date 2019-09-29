@@ -23,6 +23,16 @@ export const StateReducer: React.Reducer<any, any> = (state, action) => {
       return { ...state, showFetchLoader: true }
     case 'hide_fetch_loader': 
       return { ...state, showFetchLoader: false }
+    case 'set_fullscreen_handle':
+      const _articles = new Map(state.articles);
+      const _article = {..._articles.get(action.payload), setFullscreen: action.handle};
+      _articles.set(action.payload, _article)
+      console.log('set fullscreen handler', _article);
+      return { ...state, _articles}
+    case 'set_article_active':
+      console.log('set active', action.payload, state.articles.get(action.payload));
+      // state.articles.get(action.payload).setFullscreen(true);
+      return state
     case 'push_to_history':
       const entry = {
         time: Date.now(),

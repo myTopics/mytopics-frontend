@@ -24,6 +24,10 @@ h1 {
 
 }
 
+.flex-1 img {
+    object-fit: cover;
+}
+
 .flex-1 button {
     width: 90px;
 }

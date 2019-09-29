@@ -7,6 +7,8 @@ export const StateReducer: React.Reducer<any, any> = (state, action) => {
         newArticlesMap.set(article.symbol, article);
       });
       return { ...state, articles: newArticlesMap }
+    case 'clear_articles':
+      return { ...state, articles: []};
     case 'add_to_further_readings':
       return { ...state, furtherReadings: [...state.furtherReadings, action.payload]}
     case 'remove_from_further_readings':
